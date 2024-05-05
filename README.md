@@ -1,2 +1,4 @@
-# quote-generator
-Uses a public quotes API to generate quotes
+# Quote Generator
+
+
+A simple quote generator created using React and Tailwind to generate quotes from a public API
