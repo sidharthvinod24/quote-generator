@@ -11,7 +11,9 @@ const QuoteCard = ({ quote }) => {
         </CardHeader>
         <CardBody className="overflow-visible py-2 text-pretty">
           <h1 className="font-bold text-2xl">"{quote?.content}"</h1>
-          <h1 className="flex justify-end mt-5 italic">-{quote?.author}</h1>
+          <h1 className="flex justify-end mt-5 italic  bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 text-transparent bg-clip-text">
+            -{quote?.author}
+          </h1>
         </CardBody>
       </Card>
     </>

@@ -1,9 +1,9 @@
 import {useQuery} from '@tanstack/react-query'
 import axios from 'axios'
 
-const fetchRandomQuotes = async() => {
+const fetchRandomQuotes = async(tags) => {
     try {
-        const response = await axios.get("https://api.quotable.io/random")
+        const response = await axios.get(`https://api.quotable.io/random?tags=${tags}`)
         const data = response.data;
         return data
     } catch (error) {
@@ -12,10 +12,10 @@ const fetchRandomQuotes = async() => {
 }
 
 
-export function useFetchRandomQuotes() {
+export function useFetchRandomQuotes(tags) {
     return useQuery({
-        queryKey: ['quotes'],
-        queryFn: () => fetchRandomQuotes(),
+        queryKey: ['quotes',tags],
+        queryFn: () => fetchRandomQuotes(tags),
         retry: 5,
         staleTime: 60000
     })
